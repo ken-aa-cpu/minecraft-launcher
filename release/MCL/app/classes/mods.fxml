@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mcserver.launcher.ui.ModsController" prefWidth="700" prefHeight="500">
+   <top>
+      <VBox spacing="10">
+         <padding>
+            <Insets top="15" right="15" bottom="10" left="15" />
+         </padding>
+         <children>
+            <HBox spacing="10" alignment="CENTER_LEFT">
+               <children>
+                  <Label text="模組管理" style="-fx-font-size: 18px; -fx-font-weight: bold;" />
+                  <Region HBox.hgrow="ALWAYS" />
+                  <Label fx:id="modCountLabel" text="已載入: 0 個模組" style="-fx-text-fill: #888888;" />
+               </children>
+            </HBox>
+            
+            <HBox spacing="10" alignment="CENTER_LEFT">
+               <children>
+                  <Button fx:id="addModButton" text="添加模組" prefWidth="100" styleClass="primary-button" />
+                  <Button fx:id="removeModButton" text="移除模組" prefWidth="100" styleClass="secondary-button" />
+                  <Button fx:id="enableAllButton" text="全部啟用" prefWidth="100" styleClass="secondary-button" />
+                  <Button fx:id="disableAllButton" text="全部禁用" prefWidth="100" styleClass="secondary-button" />
+                  <Region HBox.hgrow="ALWAYS" />
+                  <Button fx:id="refreshButton" text="重新整理" prefWidth="100" styleClass="secondary-button" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </top>
+   
+   <center>
+      <SplitPane dividerPositions="0.3" orientation="HORIZONTAL">
+         <items>
+            <!-- 左側：模組插槽列表 -->
+            <VBox spacing="5">
+               <padding>
+                  <Insets top="5" right="10" bottom="5" left="15" />
+               </padding>
+               <children>
+                  <Label text="模組插槽" style="-fx-font-weight: bold;" />
+                  <ListView fx:id="slotsListView" prefHeight="400" />
+               </children>
+            </VBox>
+            
+            <!-- 右側：模組詳細信息 -->
+            <VBox spacing="10">
+               <padding>
+                  <Insets top="5" right="15" bottom="5" left="10" />
+               </padding>
+               <children>
+                  <HBox spacing="10" alignment="CENTER_LEFT">
+                     <children>
+                        <Label text="插槽詳細信息" style="-fx-font-weight: bold;" />
+                        <Region HBox.hgrow="ALWAYS" />
+                        <Label fx:id="slotStatusLabel" text="" style="-fx-text-fill: #4a90e2;" />
+                     </children>
+                  </HBox>
+                  
+                  <!-- 插槽信息面板 -->
+                  <TitledPane fx:id="slotInfoPane" text="插槽信息" expanded="true">
+                     <content>
+                        <VBox spacing="8">
+                           <padding>
+                              <Insets top="10" right="10" bottom="10" left="10" />
+                           </padding>
+                           <children>
+                              <HBox spacing="10">
+                                 <children>
+                                    <Label text="名稱:" prefWidth="60" style="-fx-font-weight: bold;" />
+                                    <Label fx:id="slotNameLabel" text="" />
+                                 </children>
+                              </HBox>
+                              <HBox spacing="10">
+                                 <children>
+                                    <Label text="類別:" prefWidth="60" style="-fx-font-weight: bold;" />
+                                    <Label fx:id="slotCategoryLabel" text="" />
+                                 </children>
+                              </HBox>
+                              <HBox spacing="10">
+                                 <children>
+                                    <Label text="描述:" prefWidth="60" style="-fx-font-weight: bold;" />
+                                    <Label fx:id="slotDescriptionLabel" text="" wrapText="true" />
+                                 </children>
+                              </HBox>
+                              <HBox spacing="10">
+                                 <children>
+                                    <Label text="必需:" prefWidth="60" style="-fx-font-weight: bold;" />
+                                    <Label fx:id="slotRequiredLabel" text="" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </content>
+                  </TitledPane>
+                  
+                  <!-- 模組列表 -->
+                  <TitledPane fx:id="modsPane" text="插槽中的模組" expanded="true">
+                     <content>
+                        <VBox spacing="5">
+                           <children>
+                              <TableView fx:id="modsTableView" prefHeight="200">
+                                 <columns>
+                                    <TableColumn fx:id="modEnabledColumn" text="啟用" prefWidth="50" />
+                                    <TableColumn fx:id="modNameColumn" text="模組名稱" prefWidth="150" />
+                                    <TableColumn fx:id="modVersionColumn" text="版本" prefWidth="80" />
+                                    <TableColumn fx:id="modFileColumn" text="檔案名稱" prefWidth="120" />
+                                 </columns>
+                              </TableView>
+                              
+                              <HBox spacing="10" alignment="CENTER_LEFT">
+                                 <children>
+                                    <Button fx:id="enableModButton" text="啟用" prefWidth="60" styleClass="secondary-button" />
+                                    <Button fx:id="disableModButton" text="禁用" prefWidth="60" styleClass="secondary-button" />
+                                    <Button fx:id="removeFromSlotButton" text="從插槽移除" prefWidth="100" styleClass="secondary-button" />
+                                    <Region HBox.hgrow="ALWAYS" />
+                                    <Button fx:id="modInfoButton" text="模組信息" prefWidth="80" styleClass="secondary-button" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </content>
+                  </TitledPane>
+               </children>
+            </VBox>
+         </items>
+      </SplitPane>
+   </center>
+   
+   <bottom>
+      <HBox spacing="10" alignment="CENTER_RIGHT">
+         <padding>
+            <Insets top="10" right="15" bottom="15" left="15" />
+         </padding>
+         <children>
+            <Label fx:id="statusLabel" text="就緒" style="-fx-text-fill: #888888;" />
+            <Region HBox.hgrow="ALWAYS" />
+            <Button fx:id="applyButton" text="套用變更" prefWidth="100" styleClass="primary-button" />
+            <Button fx:id="closeButton" text="關閉" prefWidth="80" styleClass="secondary-button" />
+         </children>
+      </HBox>
+   </bottom>
+</BorderPane>

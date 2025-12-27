@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>清藝世界模組啟動器</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="launcher-container">
+        <!-- 頂部標題欄 -->
+        <div class="title-bar">
+            <h1>清藝世界模組啟動器</h1>
+            <div class="window-controls">
+                <button class="control-btn discord-btn">💬</button>
+                <button class="control-btn settings-btn">⚙️</button>
+            </div>
+        </div>
+
+        <!-- 主要內容區域 -->
+        <div class="main-content">
+            <!-- 左側遊戲畫面 -->
+            <div class="game-preview">
+                <div class="character-scene">
+                    <div class="game-preview-overlay">
+                        <div class="welcome-text">
+                            <h2>歡迎來到清藝世界</h2>
+                            <p>準備開始你的冒險之旅！</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="game-controls">
+                    <button class="start-game-btn">開始遊戲</button>
+                    <div class="version-info">準備開始</div>
+                </div>
+            </div>
+
+            <!-- 右側信息面板 -->
+            <div class="info-panel">
+                <!-- 用戶登入區域 -->
+                <div class="user-section">
+                    <button class="login-btn">登入</button>
+                    <div class="server-select">
+                        <select class="server-dropdown">
+                            <option>選擇配置 ▼</option>
+                            <option>生存模式</option>
+                            <option>創造模式</option>
+                            <option>模組包</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- 公告區域 -->
+                <div class="announcement-section">
+                    <h3>公告</h3>
+                    <div class="announcement-content">
+                        <p>這裡是公告內容...最新消息會在這裡顯示。</p>
+                        <p>歡迎來到可愛的 Minecraft 世界！</p>
+                    </div>
+                </div>
+
+                <!-- 更新區域 -->
+                <div class="update-section">
+                    <h3>更新</h3>
+                    <div class="update-content">
+                        <p>這裡是更新日誌...遊戲版本更新資訊。</p>
+                        <div class="update-item">
+                            <strong>v1.2.3 更新：</strong>新增了更多可愛的方塊！
+                        </div>
+                        <div class="update-item">
+                            <strong>v1.2.2 更新：</strong>修復了一些小bug。
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

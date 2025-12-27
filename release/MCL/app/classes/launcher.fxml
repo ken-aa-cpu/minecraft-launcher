@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox fx:id="rootContainer" prefWidth="1280" prefHeight="720" styleClass="launcher-container" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mcserver.launcher.LauncherController">
+   <!-- 背景圖片 -->
+   <StackPane VBox.vgrow="ALWAYS">
+      <ImageView fx:id="backgroundImage" preserveRatio="false" smooth="true" fitWidth="1280" fitHeight="720">
+         <image>
+            <Image url="@background.jpg" />
+         </image>
+      </ImageView>
+      
+      <!-- 主要內容 -->
+      <VBox spacing="0">
+         <!-- 頂部標題欄 -->
+         <HBox styleClass="title-bar" prefHeight="50" alignment="CENTER_LEFT">
+            <padding>
+               <Insets left="20" right="20" top="10" bottom="10" />
+            </padding>
+            <Label text="清藝世界模組啟動器" styleClass="title-bar-text" />
+            <Region HBox.hgrow="ALWAYS" />
+            <HBox spacing="10" styleClass="window-controls">
+               <Button fx:id="discordButton" text="Discord" styleClass="control-btn discord-btn" />
+               <Button fx:id="settingsButton" text="設定" styleClass="control-btn settings-btn" />
+            </HBox>
+         </HBox>
+         
+         <!-- 主要內容區域 -->
+         <HBox spacing="20" VBox.vgrow="ALWAYS" styleClass="main-content">
+            <padding>
+               <Insets left="20" right="20" top="20" bottom="20" />
+            </padding>
+            
+            <!-- 左側遊戲預覽 -->
+            <VBox spacing="20" HBox.hgrow="ALWAYS" styleClass="game-preview">
+               <!-- 遊戲場景預覽 -->
+               <StackPane VBox.vgrow="ALWAYS" styleClass="character-scene">
+                  <VBox alignment="CENTER" styleClass="game-preview-overlay">
+                     <VBox alignment="CENTER" styleClass="welcome-text">
+                        <Label text="歡迎來到清藝世界" styleClass="welcome-title" />
+                        <Label text="準備開始你的冒險之旅！" styleClass="welcome-subtitle" />
+                     </VBox>
+                  </VBox>
+               </StackPane>
+               
+               <!-- 遊戲控制區域 -->
+               <HBox spacing="20" alignment="CENTER_LEFT" styleClass="game-controls">
+                  <Button fx:id="startGameButton" text="開始遊戲" styleClass="start-game-btn" />
+                  <Label text="準備開始" styleClass="version-info" />
+               </HBox>
+            </VBox>
+            
+            <!-- 右側信息面板 -->
+         <VBox spacing="20" prefWidth="350" styleClass="info-panel">
+            <!-- 用戶登入區域 -->
+            <VBox spacing="10" alignment="TOP_RIGHT" styleClass="user-section">
+               <Button fx:id="loginButton" text="登入" styleClass="login-btn" />
+            </VBox>
+         </VBox>
+         </HBox>
+      </VBox>
+   </StackPane>
+</VBox>

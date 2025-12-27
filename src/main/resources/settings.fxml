@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mcserver.launcher.ui.SettingsController" spacing="15" prefWidth="500" prefHeight="600">
+   <padding>
+      <Insets top="20" right="20" bottom="20" left="20" />
+   </padding>
+   <children>
+      <Label text="啟動器設定" style="-fx-font-size: 20px; -fx-font-weight: bold;" />
+      
+      <!-- 遊戲設定 -->
+      <TitledPane text="遊戲設定" expanded="true">
+         <content>
+            <VBox spacing="10">
+               <padding>
+                  <Insets top="10" right="10" bottom="10" left="10" />
+               </padding>
+               <children>
+                  <HBox spacing="10" alignment="CENTER_LEFT">
+                     <children>
+                        <Label text="Minecraft 目錄:" prefWidth="120" />
+                        <TextField fx:id="minecraftDirField" prefWidth="250" />
+                        <Button fx:id="browseMcDirButton" text="瀏覽" prefWidth="60" />
+                     </children>
+                  </HBox>
+                  
+                  <HBox spacing="10" alignment="CENTER_LEFT">
+                     <children>
+                        <Label text="Java 路徑:" prefWidth="120" />
+                        <TextField fx:id="javaPathField" prefWidth="250" />
+                        <Button fx:id="browseJavaButton" text="瀏覽" prefWidth="60" />
+                     </children>
+                  </HBox>
+                  
+                  <HBox spacing="10" alignment="CENTER_LEFT">
+                     <children>
+                        <Label text="JVM 參數:" prefWidth="120" />
+                        <TextField fx:id="javaArgsField" prefWidth="310" promptText="-Xmx4G -XX:+UseG1GC" />
+                     </children>
+                  </HBox>
+                  
+                  <HBox spacing="10" alignment="CENTER_LEFT">
+                     <children>
+                        <Label text="記憶體分配:" prefWidth="120" />
+                        <Label text="最小:" />
+                        <Spinner fx:id="memoryMinSpinner" prefWidth="80" />
+                        <Label text="MB" />
+                        <Label text="最大:" />
+                        <Spinner fx:id="memoryMaxSpinner" prefWidth="80" />
+                        <Label text="MB" />
+                     </children>
+                  </HBox>
+                  
+                  <HBox spacing="10" alignment="CENTER_LEFT">
+                     <children>
+                        <Label text="遊戲解析度:" prefWidth="120" />
+                        <ComboBox fx:id="resolutionComboBox" prefWidth="150" />
+                        <CheckBox fx:id="fullscreenCheckBox" text="全螢幕" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </content>
+      </TitledPane>
+      
+      <!-- 啟動器設定 -->
+      <TitledPane text="啟動器設定" expanded="true">
+         <content>
+            <VBox spacing="10">
+               <padding>
+                  <Insets top="10" right="10" bottom="10" left="10" />
+               </padding>
+               <children>
+                  <CheckBox fx:id="autoLoginCheckBox" text="自動登入" />
+                  <CheckBox fx:id="checkUpdatesCheckBox" text="檢查更新" />
+                  <CheckBox fx:id="autoLoadModsCheckBox" text="自動載入模組" />
+                  
+                  <Separator />
+                  
+                  <HBox spacing="10" alignment="CENTER_LEFT">
+                     <children>
+                        <Label text="GitHub 倉庫:" prefWidth="100" />
+                        <TextField fx:id="githubRepoField" prefWidth="300" promptText="username/repo" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </content>
+      </TitledPane>
+      
+      <!-- 按鈕區域 -->
+      <HBox spacing="10" alignment="CENTER_RIGHT">
+         <children>
+            <Button fx:id="resetButton" text="重設" prefWidth="80" styleClass="secondary-button" />
+            <Button fx:id="cancelButton" text="取消" prefWidth="80" styleClass="secondary-button" />
+            <Button fx:id="saveButton" text="儲存" prefWidth="80" styleClass="primary-button" />
+         </children>
+      </HBox>
+   </children>
+</VBox>

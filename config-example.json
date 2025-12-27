@@ -1,0 +1,134 @@
+{
+  "_comment": "Minecraft Forge 1.20.1 啟動器配置文件範例",
+  "_note": "複製此文件為 config.json 並根據您的環境進行修改",
+  
+  "launcherDirectory": "C:\\Users\\YourUsername\\AppData\\Roaming\\.minecraft-launcher",
+  "minecraftDirectory": "C:\\Users\\YourUsername\\AppData\\Roaming\\.minecraft",
+  
+  "java": {
+    "path": "java",
+    "args": [
+      "-Xmx4G",
+      "-Xms2G",
+      "-XX:+UseG1GC",
+      "-XX:+UnlockExperimentalVMOptions",
+      "-XX:G1NewSizePercent=20",
+      "-XX:G1ReservePercent=20",
+      "-XX:MaxGCPauseMillis=50",
+      "-XX:G1HeapRegionSize=32M"
+    ]
+  },
+  
+  "game": {
+    "width": 1280,
+    "height": 720,
+    "fullscreen": false,
+    "version": "1.20.1",
+    "forgeVersion": "47.2.0"
+  },
+  
+  "user": {
+    "autoLogin": true,
+    "lastUsername": "",
+    "rememberCredentials": true
+  },
+  
+  "updates": {
+    "checkUpdates": true,
+    "autoUpdate": false,
+    "githubRepo": "your-username/minecraft-launcher",
+    "githubToken": "",
+    "updateChannel": "stable"
+  },
+  
+  "server": {
+    "defaultServer": {
+      "name": "清藝世界",
+      "ip": "your-server.com",
+      "port": 25565
+    },
+    "autoConnect": false
+  },
+  
+  "ui": {
+    "theme": "dark",
+    "language": "zh_TW",
+    "animations": true,
+    "showAdvancedOptions": false
+  },
+  
+  "mods": {
+    "autoScan": true,
+    "enabledByDefault": true,
+    "slots": {
+      "core": {
+        "enabled": true,
+        "required": true,
+        "description": "核心模組，必須啟用",
+        "maxMods": 5
+      },
+      "optimization": {
+        "enabled": true,
+        "required": false,
+        "description": "性能優化模組",
+        "maxMods": 10
+      },
+      "utility": {
+        "enabled": true,
+        "required": false,
+        "description": "實用工具模組",
+        "maxMods": 15
+      },
+      "decoration": {
+        "enabled": false,
+        "required": false,
+        "description": "裝飾性模組",
+        "maxMods": 20
+      },
+      "technology": {
+        "enabled": false,
+        "required": false,
+        "description": "科技類模組",
+        "maxMods": 10
+      },
+      "magic": {
+        "enabled": false,
+        "required": false,
+        "description": "魔法類模組",
+        "maxMods": 10
+      },
+      "adventure": {
+        "enabled": false,
+        "required": false,
+        "description": "冒險類模組",
+        "maxMods": 15
+      },
+      "custom": {
+        "enabled": true,
+        "required": false,
+        "description": "自定義模組",
+        "maxMods": 50
+      }
+    }
+  },
+  
+  "logging": {
+    "level": "INFO",
+    "logToFile": true,
+    "logDirectory": "logs",
+    "maxLogFiles": 10,
+    "maxLogSize": "10MB"
+  },
+  
+  "advanced": {
+    "useCustomClasspath": false,
+    "customClasspath": [],
+    "additionalJvmArgs": [],
+    "gameArgs": [],
+    "environmentVariables": {},
+    "workingDirectory": ""
+  },
+  
+  "_configVersion": "1.0.0",
+  "_lastModified": "2024-01-01T00:00:00Z"
+}

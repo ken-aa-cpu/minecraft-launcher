@@ -1,0 +1,283 @@
+/* 全局樣式 - 基於HTML設計 */
+* {
+    -fx-font-family: "Noto Sans TC", "Microsoft YaHei", sans-serif;
+}
+
+.root {
+    -fx-font-family: "Noto Sans TC", "Microsoft YaHei", sans-serif;
+    -fx-background-color: transparent;
+}
+
+/* 啟動器容器 - 對應 .launcher-container */
+.launcher-container {
+    -fx-background-color: rgba(255, 255, 255, 0.1);
+    -fx-background-radius: 0;
+    -fx-effect: none;
+}
+
+/* 背景圖片自適應 */
+.launcher-container ImageView {
+    -fx-fit-to-width: true;
+    -fx-fit-to-height: true;
+    -fx-preserve-ratio: false;
+}
+
+/* 頂部標題欄 - 對應 .title-bar */
+.title-bar {
+    -fx-background-color: #2196F3;
+    -fx-background-radius: 0;
+    -fx-padding: 10 20;
+    -fx-alignment: center-left;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 10, 0, 0, 2);
+}
+
+.title-bar-text {
+    -fx-text-fill: white;
+    -fx-font-size: 18px;
+    -fx-font-weight: 500;
+}
+
+.window-controls {
+    -fx-spacing: 10;
+}
+
+.control-btn {
+    -fx-background-color: rgba(255, 255, 255, 0.2);
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-pref-width: 40;
+    -fx-pref-height: 32;
+    -fx-background-radius: 5;
+    -fx-cursor: hand;
+    -fx-border-width: 0;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 4, 0, 0, 2);
+}
+
+.control-btn:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.3);
+    -fx-translate-y: -1;
+}
+
+/* 主要內容區域 - 對應 .main-content */
+.main-content {
+    -fx-padding: 20;
+    -fx-spacing: 20;
+    -fx-background-color: transparent;
+}
+
+/* 左側遊戲預覽 - 對應 .game-preview */
+.game-preview {
+    -fx-spacing: 20;
+    -fx-background-color: transparent;
+}
+
+/* 遊戲場景 - 對應 .character-scene */
+.character-scene {
+    -fx-background-color: rgba(255, 255, 255, 0.2);
+    -fx-background-radius: 15;
+    -fx-padding: 20;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 32, 0, 0, 8);
+    -fx-border-color: rgba(255, 255, 255, 0.4);
+    -fx-border-width: 2;
+    -fx-border-radius: 15;
+}
+
+.game-preview-overlay {
+    -fx-alignment: center;
+    -fx-background-color: transparent;
+}
+
+/* 歡迎文字 - 對應 .welcome-text */
+.welcome-text {
+    -fx-alignment: center;
+    -fx-spacing: 10;
+    -fx-background-color: transparent;
+}
+
+.welcome-title {
+    -fx-text-fill: #FFD700;
+    -fx-font-size: 40px;
+    -fx-font-weight: 700;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 4, 0, 2, 2);
+}
+
+.welcome-subtitle {
+    -fx-text-fill: white;
+    -fx-font-size: 19px;
+    -fx-font-weight: 400;
+    -fx-opacity: 0.9;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.7), 4, 0, 2, 2);
+}
+
+/* 遊戲控制區域 - 對應 .game-controls */
+.game-controls {
+    -fx-spacing: 20;
+    -fx-alignment: center-left;
+    -fx-background-color: transparent;
+}
+
+/* 開始遊戲按鈕 - 對應 .start-game-btn */
+.start-game-btn {
+    -fx-background-color: linear-gradient(to bottom right, #00BCD4, #2196F3);
+    -fx-text-fill: white;
+    -fx-font-size: 18px;
+    -fx-font-weight: 500;
+    -fx-pref-width: 200;
+    -fx-pref-height: 50;
+    -fx-background-radius: 25;
+    -fx-effect: dropshadow(gaussian, rgba(33, 150, 243, 0.3), 15, 0, 0, 4);
+    -fx-cursor: hand;
+    -fx-border-width: 0;
+    -fx-font-family: "Noto Sans TC", "Microsoft YaHei", sans-serif;
+}
+
+.start-game-btn:hover {
+    -fx-effect: dropshadow(gaussian, rgba(33, 150, 243, 0.4), 20, 0, 0, 6);
+    -fx-translate-y: -2;
+}
+
+.version-info {
+    -fx-text-fill: #666;
+    -fx-font-size: 14px;
+}
+
+/* 右側信息面板 - 對應 .info-panel */
+.info-panel {
+    -fx-spacing: 20;
+    -fx-background-color: transparent;
+    -fx-max-width: 350;
+}
+
+/* 用戶登入區域 - 對應 .user-section */
+.user-section {
+    -fx-spacing: 10;
+    -fx-alignment: top-right;
+    -fx-background-color: transparent;
+}
+
+/* 登入按鈕 - 對應 .login-btn */
+.login-btn {
+    -fx-background-color: linear-gradient(to bottom right, #FF6B9D, #FF8E9B);
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-font-weight: 500;
+    -fx-pref-width: 120;
+    -fx-pref-height: 44;
+    -fx-background-radius: 20;
+    -fx-effect: dropshadow(gaussian, rgba(255, 107, 157, 0.3), 15, 0, 0, 4);
+    -fx-cursor: hand;
+    -fx-border-width: 0;
+    -fx-font-family: "Noto Sans TC", "Microsoft YaHei", sans-serif;
+}
+
+.login-btn:hover {
+    -fx-effect: dropshadow(gaussian, rgba(255, 107, 157, 0.4), 20, 0, 0, 6);
+    -fx-translate-y: -2;
+}
+
+/* 服務器下拉選單 - 對應 .server-dropdown */
+.server-dropdown {
+    -fx-background-color: linear-gradient(to bottom right, #4CAF50, #8BC34A);
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-pref-width: 150;
+    -fx-pref-height: 40;
+    -fx-background-radius: 15;
+    -fx-border-width: 0;
+    -fx-cursor: hand;
+    -fx-font-family: "Noto Sans TC", "Microsoft YaHei", sans-serif;
+}
+
+.server-dropdown .arrow-button {
+    -fx-background-color: transparent;
+}
+
+.server-dropdown .arrow {
+    -fx-background-color: white;
+}
+
+/* 公告和更新區域 - 對應 .announcement-section, .update-section */
+.announcement-section,
+.update-section {
+    -fx-background-color: rgba(255, 255, 255, 0.85);
+    -fx-background-radius: 15;
+    -fx-padding: 20;
+    -fx-spacing: 15;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.15), 32, 0, 0, 8);
+    -fx-border-color: rgba(255, 255, 255, 0.3);
+    -fx-border-width: 1;
+    -fx-border-radius: 15;
+}
+
+/* 區域標題 - 對應 h3 */
+.section-title {
+    -fx-text-fill: #333;
+    -fx-font-size: 18px;
+    -fx-font-weight: 600;
+}
+
+/* 內容區域 */
+.announcement-content,
+.update-content {
+    -fx-spacing: 10;
+    -fx-background-color: transparent;
+}
+
+.content-text {
+    -fx-text-fill: #666;
+    -fx-font-size: 14px;
+    -fx-line-spacing: 1.6;
+    -fx-wrap-text: true;
+}
+
+/* 更新項目 - 對應 .update-item */
+.update-item {
+    -fx-background-color: rgba(33, 150, 243, 0.1);
+    -fx-background-radius: 8;
+    -fx-padding: 8;
+    -fx-spacing: 5;
+    -fx-border-color: #2196F3;
+    -fx-border-width: 0 0 0 3;
+    -fx-border-radius: 0 8 8 0;
+}
+
+.update-text {
+    -fx-text-fill: #666;
+    -fx-font-size: 14px;
+    -fx-wrap-text: true;
+}
+
+/* 進度條 */
+.progress-bar {
+    -fx-background-color: rgba(255, 255, 255, 0.2);
+    -fx-background-radius: 10;
+}
+
+.progress-bar .bar {
+    -fx-background-color: #2196F3;
+    -fx-background-radius: 10;
+}
+
+/* 滾動條樣式 */
+.scroll-bar {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar .track {
+    -fx-background-color: rgba(255, 255, 255, 0.1);
+    -fx-background-radius: 4;
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: rgba(255, 255, 255, 0.3);
+    -fx-background-radius: 4;
+}
+
+.scroll-bar .thumb:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.5);
+}
+
+/* 動畫效果 - 模擬CSS的float動畫 */
+.character-scene {
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 32, 0, 0, 8);
+}
